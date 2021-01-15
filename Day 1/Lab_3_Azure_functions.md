@@ -9,20 +9,6 @@ After you complete this lab, you'll be able to:
 
 ## Instructions
 
-### Before you start
-
-#### Sign in to the lab virtual machine
-Ensure that you're signed in to your Windows 10 virtual machine (VM) by using the following credentials:
-- Username: **Admin**
-- Password: **Pa55w.rd**
-
-#### Review the installed applications
-Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for the applications that you'll use in this lab:
-- Microsoft Edge
-- File Explorer
-- Visual Studio Code
-
-
 ### Exercise 1: Create a schedule-triggered function
 
 #### Task 1: Create a function app
