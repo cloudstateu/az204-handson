@@ -140,9 +140,15 @@ Find the taskbar on your Windows 10 desktop. The taskbar contains the icons for 
     - name: **BlobTrigger1**
     - Path: **sample-container** (created in previous task)
 3. Click "Add" in the bottom and wait for the resource to be created.
-4. Close the newly created function blade and open Settings > Configuration from the left side menu.
-5. Locate AzureWebJobsStorage and paste connection string to storage account from the previous task.
-6. Go to Monitoring > Log stream from the left side menu.
+4. Wait for the function to be created, then review the code:
+    ```js
+        module.exports = async function (context, myBlob) {
+        context.log("JavaScript blob trigger function processed blob \n Blob:", context.bindingData.blobTrigger, "\n Blob Size:", myBlob.length, "Bytes");
+};
+    ```
+5. Close the newly created function blade and open Settings > Configuration from the left side menu.
+6. Locate AzureWebJobsStorage and paste connection string to storage account from the previous task.
+7. Go to Monitoring > Log stream from the left side menu.
 
 #### Task 3: Upload sample blob to the storage
 1. Open Azure Portal in new browser tab
