@@ -124,13 +124,13 @@ After you complete this lab, you'll be able to:
     - Development environment: **Develop in portal**
     - template: **Azure Blob Storage trigger**
     - name: **BlobTrigger1**
-    - Path: **sample-container** (created in previous task)
+    - Path: **sample-container/{name}** (created in previous task)
 3. Click "Add" in the bottom and wait for the resource to be created.
 4. Wait for the function to be created, then review the code:
     ```js
-        module.exports = async function (context, myBlob) {
+    module.exports = async function (context, myBlob) {
         context.log("JavaScript blob trigger function processed blob \n Blob:", context.bindingData.blobTrigger, "\n Blob Size:", myBlob.length, "Bytes");
-};
+    };
     ```
 5. Close the newly created function blade and open Settings > Configuration from the left side menu.
 6. Locate AzureWebJobsStorage and paste connection string to storage account from the previous task.
