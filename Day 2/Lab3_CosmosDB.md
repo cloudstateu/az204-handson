@@ -20,6 +20,7 @@ https://portal.azure.com
     - Subscription: **ChmurowiskoLab**
     - Resource Group: **YOUR_RESOURCE_GROUP**
     - Location: **West Europe**
+    - Apply Free Tier Discount: **Do not apply**
     - Select **Enable geo-redundancy**
     - Keep default values for the rest of the settings
  5. Wait for the Azure Cosmos DB account to be deployed.
