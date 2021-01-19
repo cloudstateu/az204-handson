@@ -25,7 +25,7 @@ After you complete this lab, you'll be able to:
     - Storage account: **funcstor[yourname]**
     - Operating system: **Windows**
     - Plan: **Consumption (Serverless)**
-4. In the "Monitoring" make sure **Yes** is selected.
+4. In the "Monitoring" make sure **No** is selected.
 5. Press "Review + create" in the bottom and then "Create"
     > **Note**: Wait for Azure to finish creating the function app before you move forward with the lab. You'll receive a notification when the app is created.
 
@@ -118,7 +118,8 @@ After you complete this lab, you'll be able to:
     - Name: **sample-container**
     - Public access level: **Private (no anonymous access)**
 
-#### Task 2: Create an Blob-triggered function
+
+#### Task 2: Create an Blob-triggered function and enable monitoring for the Function App
 1. Open the Funtion App created in the previous excercise 
 2. Create a new function with the following details:
     - Development environment: **Develop in portal**
@@ -126,15 +127,17 @@ After you complete this lab, you'll be able to:
     - name: **BlobTrigger1**
     - Path: **sample-container/{name}** (created in previous task)
 3. Click "Add" in the bottom and wait for the resource to be created.
-4. Wait for the function to be created, then review the code:
+4. Wait for the function to be created, then review the code in the "Code + Test":
     ```js
     module.exports = async function (context, myBlob) {
         context.log("JavaScript blob trigger function processed blob \n Blob:", context.bindingData.blobTrigger, "\n Blob Size:", myBlob.length, "Bytes");
     };
     ```
-5. Close the newly created function blade and open Settings > Configuration from the left side menu.
-6. Locate AzureWebJobsStorage and paste connection string to storage account from the previous task.
-7. Go to Monitoring > Log stream from the left side menu.
+5. Open "Monitor" from the left side menu and press "Configure" to enable Application Insights
+6. Select "Create new  resource", enter name and location (**West Europe**) and select "OK".
+5. Close the newly created Application Insights and function blades and open Settings > Configuration from the left side menu in the Function App.
+6. Locate AzureWebJobsStorage key and paste connection string to storage account from the previous task.
+7. Go to Monitoring > Log stream from the left side menu in the Function App.
 
 #### Task 3: Upload sample blob to the storage
 1. Open Azure Portal in new browser tab
