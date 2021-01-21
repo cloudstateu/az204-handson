@@ -104,7 +104,7 @@ After you complete this lab, you will be able to:
 1.  At the command prompt, create a new .NET Web API application named **SimpleApi** in the current directory:
 
     ```
-    dotnet new webapi --output --name SimpleApi
+    dotnet new webapi --output . --name SimpleApi
     ```
 
 1.  Import version 2.14.0 of **Microsoft.ApplicationInsights** from NuGet to the current project:
