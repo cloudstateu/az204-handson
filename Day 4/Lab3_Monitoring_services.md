@@ -213,41 +213,35 @@ You created an API by using ASP.NET and configured it to stream application metr
 
 1.  Open Visual Studio Code.
 
-1.  In Visual Studio Code, open the **Day4\\files\\Lab3\\Starter\\Api** folder.
+2.  Open your webapp folder.
 
-1.  Use the Explorer in Visual Studio Code to open a new terminal with the context set to the current working directory.
+3.  Use the Explorer in Visual Studio Code to open a new terminal with the context set to the current working directory.
 
-1.  Sign in to the Azure Command-Line Interface (CLI) by using your Azure credentials:
+4.  Sign in to the Azure Command-Line Interface (CLI) by using your Azure credentials:
 
     ```
     az login
     ```
 
-1.  List all the apps in your **YOUR_RESOURCE_GROUP** resource group:
+5.  List all the apps in your **YOUR_RESOURCE_GROUP** resource group:
     
     ```
     az webapp list --resource-group YOUR_RESOURCE_GROUP
     ```
 
-1.  Find the apps that have the prefix **smpapi**:
+6.  Find the apps that have the prefix **smpapi**:
     
     ```
     az webapp list --resource-group YOUR_RESOURCE_GROUP --query "[?starts_with(name, 'smpapi')]"
     ```
 
-1.  Print only the name of the single app that has the prefix **smpapi**:
+7.  Print only the name of the single app that has the prefix **smpapi**:
 
     ```
     az webapp list --resource-group YOUR_RESOURCE_GROUP --query "[?starts_with(name, 'smpapi')].{Name:name}" --output tsv
     ```
 
-2.  Change the current directory to the **Day4\\files\\Lab4\\Starter** directory that contains the lab files:
-
-    ```
-    cd Day4\files\Lab4\Starter\
-    ```
-
-3.  Deploy the **api.zip** file to the web app that you created earlier in this lab:
+8.  Deploy the **api.zip** file to the web app that you created earlier in this lab:
 
     ```
     az webapp deployment source config-zip --resource-group YOUR_RESOURCE_GROUP --src api.zip --name <name-of-your-api-app>
@@ -255,13 +249,13 @@ You created an API by using ASP.NET and configured it to stream application metr
 
     > **Note**: Replace the *name-of-your-api-app* placeholder with the name of the web app that you created earlier in this lab. You recently queried this app’s name in the previous steps.
 
-4.  Return to your currently open browser window that's displaying the Azure portal.
+9.  Return to your currently open browser window that's displaying the Azure portal.
 
-5.  Access the **smpapi[yourname]** web app that you created earlier in this lab.
+10. Access the **smpapi[yourname]** web app that you created earlier in this lab.
 
-6.  Open the **smpapi[yourname]** web app in your browser.
+11. Open the **smpapi[yourname]** web app in your browser.
 
-7.  Perform a GET request to the **/weatherforecast** relative path of the website, and then find the JavaScript Object Notation (JSON) array that's returned as a result of using the API.
+12. Perform a GET request to the **/weatherforecast** relative path of the website, and then find the JavaScript Object Notation (JSON) array that's returned as a result of using the API.
 
     > **Note**: For example, if your URL is https://smpapistudent.azurewebsites.net, the new URL would be https://smpapistudent.azurewebsites.net/weatherforecast.
 
