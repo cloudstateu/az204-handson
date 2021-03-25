@@ -20,8 +20,6 @@ After you complete this lab, you'll be able to:
     - Performance: **Standard**
     - Account kind: **StorageV2 (general purpose v2)**
     - Replication: **Locally-redundant storage (LRS)**
-    - Access tier: **Hot**
-    > **Note**: Wait for Azure to finish creating the storage account before you move forward with the lab. You'll receive a notification when the account is created.
 1. Open the **Access Keys** blade of your newly created storage account instance.
 1. Record the value in the **Connection string** text box. You'll use this value later in this lab.
 
@@ -32,7 +30,6 @@ After you complete this lab, you'll be able to:
     - Name: **securevault[yourname]**
     - Region: **West Europe**
     - Pricing tier: **Standard**
-    > **Note**: Wait for Azure to finish creating the key vault before you move forward with the lab. You'll receive a notification when the vault is created.
 
 ### Task 3: Create an Azure Functions app
 
@@ -40,7 +37,7 @@ After you complete this lab, you'll be able to:
     - Existing resource group: **YOUR_RESOURCE_GROUP**
     - App name: **securefun[yourname]**
     - Publish: **Code**
-    - Runtime Stack: **.NET Core**
+    - Runtime Stack: **.NET**
     - Version: **3.1**
     - Region: **West Europe**
     - Operating system: **Linux**
@@ -102,9 +99,9 @@ After you complete this lab, you'll be able to:
 
 1. Open the **Windows Terminal** application.
 1. Create new empty directory for your new function project. Enter this directory.
+    >**Note:** Function created in the next step will be named after this folder.
 
 1. Use the **Azure Functions Core Tools** to create a new local Azure Functions project with the following details:
-    - worker runtime: **dotnet**
 
     ```powershell
     func init --worker-runtime dotnet
@@ -202,7 +199,7 @@ After you complete this lab, you'll be able to:
     return new OkObjectResult(connectionString);
     ```
 
-14. **Save** the **Echo.cs** file.
+14. **Save** the **FileParser.cs** file.
 
 ### Task 4: Validate the local function
 
@@ -308,7 +305,7 @@ After you complete this lab, you'll be able to:
     return new FileStreamResult(response?.Value?.Content, response?.Value?.ContentType);
     ```
 
-1. **Save** the **Echo.cs** file.
+1. **Save** the **FileParser.cs** file.
 
 ### Task 4: Deploy and validate the Azure Functions app
 
