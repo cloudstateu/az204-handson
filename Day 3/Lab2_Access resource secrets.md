@@ -1,5 +1,11 @@
 # Lab: Access resource secrets more securely across services | Student lab manual
 
+## Prerequisites
+* Windows Terminal: https://docs.microsoft.com/en-us/windows/terminal/get-started
+* Dotnet 3.1 SDK: https://dotnet.microsoft.com/download/dotnet/3.1
+* Azure Functions Core Tools: https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local
+ 
+
 ## Objectives
 
 After you complete this lab, you'll be able to:
